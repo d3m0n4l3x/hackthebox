@@ -74,7 +74,8 @@ else:
 
 #2.2:
 print("Website Directory Bustering is in progress ... ")
-command2 = 'rm -Rf ./reports/' + web_scan_report_name + '.dirbustering_report.txt; timeout 5m dirb ' + global_target_url + ' -S -o ./reports/' + web_scan_report_name + '.dirbustering_report.txt > /dev/null 2>&1'
+#command2 = 'rm -Rf ./reports/' + web_scan_report_name + '.dirbustering_report.txt; timeout 5m dirb ' + global_target_url + ' -S -o ./reports/' + web_scan_report_name + '.dirbustering_report.txt > /dev/null 2>&1'
+command2 = 'rm -Rf ./reports/' + web_scan_report_name + '.dirbustering_report.txt; dirb ' + global_target_url + ' -S -o ./reports/' + web_scan_report_name + '.dirbustering_report.txt > /dev/null 2>&1'
 subprocess.call(command2, shell=True)
 print('Dirbustering is complete, and the report is stored at ./reports/' + web_scan_report_name + '.dirbustering_report.txt')
 
